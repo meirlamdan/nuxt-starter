@@ -5,7 +5,7 @@
 - [**Nuxt 3**](https://v3.nuxtjs.org/)
 - [**Nuxt UI**](https://ui.nuxtjs.org/)
 - [**Drizzle ORM**](https://orm.drizzle.team/)
-- [**Nuxt Auth Utils**](https://github.com/antfu/nuxt-auth-utils)
+- [**Nuxt Auth Utils**](https://github.com/atinux/nuxt-auth-utils)
 
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
