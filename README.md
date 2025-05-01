@@ -1,6 +1,6 @@
 # Nuxt Starter
 
-> A minimal starter for Nuxt 3
+### A minimal starter for Nuxt 3
 
 - [**Nuxt 3**](https://v3.nuxtjs.org/)
 - [**Nuxt UI**](https://ui.nuxtjs.org/)
@@ -48,9 +48,7 @@ to seed the database with admin user
 ```bash
 npm run run dev
 ```
-and open the nuxt dev-tools and open the tab of 'Server Tasks'
-
-click on 'createSuperAdmin' and run it.
+open the nuxt dev-tools and on the tab of 'Server Tasks' click on 'createSuperAdmin' and run it.
 by default it will create an admin user with email `super@admin` and password `password` and role `superadmin`, but you can change it in the payload:
 
 ```bash
