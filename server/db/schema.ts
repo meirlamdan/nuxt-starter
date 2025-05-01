@@ -7,7 +7,7 @@ export const usersTable = sqliteTable("users", {
     lastName: text().notNull(),
     email: text().notNull().unique(),
     role: text({ enum: ["user", "admin", "superadmin"] }).notNull().default('user'),
-    password: text().notNull(),
+    password: text(),
     createdAt: text().notNull().default(sql`(CURRENT_TIMESTAMP)`),
     updatedAt: text().$onUpdate(() => sql`(CURRENT_TIMESTAMP)`),
 });

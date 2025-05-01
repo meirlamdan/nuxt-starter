@@ -31,15 +31,16 @@ const auth = async () => {
 </script>
 
 <template>
-  <div class="mt-40">
+  <div class="w-56 mx-auto text-center mt-32">
     <form @submit.prevent="auth">
-      <div class="w-56 mx-auto text-center">
+      <div>
         <UInput placeholder="email" icon="i-heroicons-envelope" v-model="model.email" required></UInput>
         <UInput class="mt-2" placeholder="password" icon="i-heroicons-lock-closed" v-model="model.password" required>
         </UInput>
-        <UButton class="mt-4" variant="outline" type="submit" :loading="isPending">Submit</UButton>
+        <UButton class="mt-2" variant="outline" type="submit"  size="sm" :loading="isPending">Submit</UButton>
       </div>
     </form>
+    <UButton class="mt-14" variant="subtle" :to="'/api/users/auth-google'" external color="neutral" label="Login with Google" icon="i-logos-google-icon"  block/>
   </div>
 </template>
 

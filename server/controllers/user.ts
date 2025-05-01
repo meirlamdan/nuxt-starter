@@ -32,8 +32,16 @@ export const getUser = async (id: string) => {
   return user
 }
 
-export const createUser = async (event: any, user: typeof usersTable.$inferInsert) => {
-  user.password = await hashPassword(user.password)
+export const getUserByEmail = async (email: string) => {
+  const [user] = await useDb().select().from(usersTable).where(eq(usersTable.email, email))
+  return user
+}
+
+export const createUser = async (event: any, user: typeof usersTable.$inferInsert, isByGoogle = false) => {
+  if (!isByGoogle && !user.password) {
+    throw createError({ statusCode: 400, statusMessage: 'Password is required' })
+  }
+  user.password = isByGoogle ? '' : await hashPassword(user.password as string)
   const [createdUser] = await useDb().insert(usersTable).values(user).returning()
   await setUserSession(event, {
     user: {
@@ -41,7 +49,7 @@ export const createUser = async (event: any, user: typeof usersTable.$inferInser
       email: createdUser.email,
       firstName: createdUser.firstName,
       lastName: createdUser.lastName,
-      role: createdUser.role
+      role: 'user' // TODO: if admin create user, then role can be admin 
     }
   })
   return 'success'
@@ -59,8 +67,8 @@ export const deleteUser = async (id: string) => {
 }
 
 export const authUser = async (event: any, email: string, password: string) => {
-  const [user] = await useDb().select().from(usersTable).where(eq(usersTable.email, email))
-  if (!user) {
+  const user = await getUserByEmail(email)
+  if (!user || !user.password) {
     throw createError({ statusCode: 401, statusMessage: 'Invalid credentials' })
   }
   const isValid = await verifyPassword(user.password, password)

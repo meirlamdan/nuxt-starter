@@ -29,16 +29,17 @@ const signUp = async () => {
 </script>
 
 <template>
-  <div class="mt-40">
-    <form @submit.prevent="signUp" class="max-w-52 mx-auto text-center">
+  <div class="w-56 mx-auto text-center mt-32">
+    <form @submit.prevent="signUp" class="">
       <div class="space-y-2">
         <UInput placeholder="first name" icon="i-heroicons-user" v-model="model.firstName"></UInput>
         <UInput placeholder="last name" icon="i-heroicons-user" v-model="model.lastName"></UInput>
         <UInput placeholder="email" icon="i-heroicons-envelope" v-model="model.email"></UInput>
         <UInput placeholder="password" icon="i-heroicons-lock-closed" v-model="model.password"></UInput>
       </div>
-      <UButton class="mt-4" type="submit" :leading="isPending">Submit</UButton>
+      <UButton class="mt-2" variant="outline" type="submit" size="sm" :leading="isPending">Submit</UButton>
     </form>
+    <UButton class="mt-14" variant="subtle" :to="'/api/users/auth-google'" external color="neutral" label="signup with Google" icon="i-logos-google-icon"  block/>
   </div>
 </template>
 

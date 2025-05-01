@@ -60,6 +60,22 @@ by default it will create an admin user with email `super@admin` and password `p
   "role": "admin"
 }
 ```
+
+## Auth
+
+### login with email and password
+
+### Login with Google
+
+(You can use any auth provider supported by [Nuxt Auth Utils](https://github.com/atinux/nuxt-auth-utils).)
+
+in the `.env` file add:
+
+```bash
+NUXT_OAUTH_GOOGLE_CLIENT_ID=
+NUXT_OAUTH_GOOGLE_CLIENT_ID=
+```
+
 ## Development
 Start the development server on `http://localhost:3000`:
 
