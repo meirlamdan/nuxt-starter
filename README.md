@@ -46,7 +46,7 @@ npm run db:push
 to seed the database with admin user
 
 ```bash
-npm run run dev
+npm run dev
 ```
 open the nuxt dev-tools and on the tab of 'Server Tasks' click on 'createSuperAdmin' and run it.
 by default it will create an admin user with email `super@admin` and password `password` and role `superadmin`, but you can change it in the payload:
