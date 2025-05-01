@@ -2,8 +2,8 @@
 
 ### A minimal starter for Nuxt 3
 
-- [**Nuxt 3**](https://v3.nuxtjs.org/)
-- [**Nuxt UI**](https://ui.nuxtjs.org/)
+- [**Nuxt 3**](https://nuxt.com/)
+- [**Nuxt UI**](https://ui.nuxt.com/)
 - [**Drizzle ORM**](https://orm.drizzle.team/)
 - [**Nuxt Auth Utils**](https://github.com/atinux/nuxt-auth-utils)
 
